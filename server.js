@@ -1,8 +1,10 @@
 const express = require('express');
+cons cors = require('cors');
 require('dotenv').config()
 const mailer = require('./services/mails');
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 
