@@ -1,5 +1,5 @@
 const express = require('express');
-cons cors = require('cors');
+const cors = require('cors');
 require('dotenv').config()
 const mailer = require('./services/mails');
 const app = express();
@@ -24,7 +24,7 @@ app.post('/sendmail', (req, res) => {
             from: req.body.from,
             to: process.env.PAULINE_MAILER,
             subject: req.body.subject,
-            html: `<div>${req.body.message}</div><div><p> email envoyé par :${req.body.from}</p></div>` 
+            html: `<div>${req.body.message}</div><div><p> email envoyé par :${req.body.from}</p><p>${req.body.name}</p></div>` 
         });
         res.status(200).send('Email sent');
     } catch (error) {
