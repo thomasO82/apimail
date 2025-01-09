@@ -26,6 +26,6 @@ app.post('/sendmail', (req, res) => {
         });
         res.status(200).send('Email sent');
     } catch (error) {
-        
+        res.status(500).send('Error sending email');
     }
 });

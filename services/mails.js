@@ -12,6 +12,7 @@ exports.sendMail = (mailoption) => {
     transporter.sendMail(mailoption, (err, info) => {
         if (err) {
             console.log(err);
+            throw err;
         } else {
             console.log('Email sent: ' + info.response);
         }
