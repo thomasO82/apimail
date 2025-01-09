@@ -16,7 +16,7 @@ app.listen(process.env.PORT, (err) => {
 });
 
 
-app.get('/sendmail', (req, res) => {
+app.post('/sendmail', (req, res) => {
     try {
         mailer.sendMail({
             from: req.body.from,
