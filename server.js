@@ -24,7 +24,7 @@ app.post('/sendmail', (req, res) => {
             from: req.body.from,
             to: process.env.PAULINE_MAILER,
             subject: req.body.subject,
-            html: `<div>${req.body.message}</div><div><p> email envoyé par :${req.body.from}</p><p>${req.body.name}</p></div>` 
+            html: `<div>${req.body.message}</div><div><p> email envoyé par :${req.body.email}</p><p>${req.body.name}</p></div>` 
         });
         res.status(200).send('Email sent');
     } catch (error) {
